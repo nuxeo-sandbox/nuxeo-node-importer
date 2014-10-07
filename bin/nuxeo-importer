@@ -8,13 +8,30 @@ var pkg = require('../package.json');
 program
   .version(pkg.version)
   .usage('[options] local-path remote-path')
+  .option('-b, --baseURL [URL]', 'Base URL', 'http://localhost:8080/nuxeo')
   .option('-u, --username [username]', 'Username', 'Administrator')
   .option('-p, --password [password]', 'Password', 'Administrator')
-  .option('-b, --baseURL [URL]', 'Base URL', 'http://localhost:8080/nuxeo');
+  .option('-c, --chainId [chainId]', 'Operation chain to use when creating files', 'FileManager.Import')
+  .option('-t, --folderishType [type]', 'Document type to use when creating folders', 'Folder')
+  .option('-v, --verbose', 'Verbose output', false);
+
 program.parse(process.argv);
 
 if (program.args.length < 2) {
   program.help();
+}
+
+if (program.verbose) {
+  console.log('');
+  console.log('Configuration');
+  console.log('  baseURL: ' + program.baseURL);
+  console.log('  username: ' + program.username);
+  console.log('  password: ' + program.password);
+  console.log('  chainId: ' + program.chainId);
+  console.log('  folderishType: ' + program.folderishType);
+  console.log('  localPath: ' + program.args[0]);
+  console.log('  remotePath: ' + program.args[1]);
+  console.log('');
 }
 
 importer.import({
@@ -23,4 +40,7 @@ importer.import({
   password: program.password,
   localPath: program.args[0],
   remotePath: program.args[1],
+  chainId: program.chainId,
+  folderishType: program.folderishType,
+  verbose: program.verbose
 });
