@@ -1,0 +1,31 @@
+{
+  "name": "nuxeo-importer",
+  "version": "0.1.0",
+  "description": "Command line tool to import a local folder to a Nuxeo Platform instance.",
+  "main": "lib/main.js",
+  "bin": {
+    "nuxeo-importer": "./bin/nuxeo-importer"
+  },
+  "author": "Nuxeo (http://www.nuxeo.com/)",
+  "contributors": [
+    {
+      "name": "Thomas Roger",
+      "email": "troger@nuxeo.com"
+    }
+  ],
+  "homepage": "https://github.com/troger/nuxeo-node-importer",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/troger/nuxeo-node-importer.git"
+  },
+  "licenses": [
+    {
+      "type": "Apache",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
+  "dependencies": {
+    "nuxeo": "^0.3.0",
+    "restler": "~3.1.0"
+  }
+}
