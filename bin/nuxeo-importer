@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+var pkg = require('../package.json');
+  program = require('commander'),
+  fs = require('fs'),
+  importer = require('../');
+
+program
+  .version(pkg.version)
+  .usage('[options] local-path remote-path')
+  .option('-u, --username [username]', 'Username', 'Administrator')
+  .option('-p, --password [password]', 'Password', 'Administrator')
+  .option('-b, --baseURL [URL]', 'Base URL', 'http://localhost:8080/nuxeo');
+program.parse(process.argv);
+
+if (program.args.length < 2) {
+  program.help();
+}
+
+importer.import({
+  baseURL: program.baseURL,
+  username: program.username,
+  password: program.password,
+  localPath: program.args[0],
+  remotePath: program.args[1],
+});
