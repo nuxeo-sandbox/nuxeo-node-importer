@@ -25,6 +25,7 @@
     }
   ],
   "dependencies": {
+    "commander": "^2.3.0",
     "nuxeo": "^0.3.0",
     "restler": "~3.1.0"
   }
