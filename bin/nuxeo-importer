@@ -13,6 +13,7 @@ program
   .option('-p, --password [password]', 'Password', 'Administrator')
   .option('-c, --chainId [chainId]', 'Operation chain to use when creating files', 'FileManager.Import')
   .option('-t, --folderishType [type]', 'Document type to use when creating folders', 'Folder')
+  .option('-m, --maxConcurrentRequests [max]', 'Maximum number of concurrent requests', 20)
   .option('-v, --verbose', 'Verbose output', false);
 
 program.parse(process.argv);
@@ -29,6 +30,7 @@ if (program.verbose) {
   console.log('  password: ' + program.password);
   console.log('  chainId: ' + program.chainId);
   console.log('  folderishType: ' + program.folderishType);
+  console.log('  maxConcurrentRequests: ' + program.maxConcurrentRequests);
   console.log('  localPath: ' + program.args[0]);
   console.log('  remotePath: ' + program.args[1]);
   console.log('');
@@ -42,5 +44,6 @@ importer.import({
   remotePath: program.args[1],
   chainId: program.chainId,
   folderishType: program.folderishType,
+  maxConcurrentRequests: program.maxConcurrentRequests,
   verbose: program.verbose
 });
