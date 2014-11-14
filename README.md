@@ -26,5 +26,5 @@ Options are:
 - `-p, --password`: the password to use to connect to the server. Default to `Administrator`.
 - `-c, --chainId`: operation chain to use when creating files. Default to `FileManager.Import`.
 - `-t, --folderishType`: document type to use when creating folders. Default to `Folder`.
-- `-m, --maxConcurrentRequests`: Maximum number of concurrent requests. Default to 20.
+- `-m, --maxConcurrentRequests`: Maximum number of concurrent requests. Default to 5.
 - `-v, --verbose`: verbose output, print configuration and more logs Default to `false`.

@@ -13,7 +13,7 @@ program
   .option('-p, --password [password]', 'Password', 'Administrator')
   .option('-c, --chainId [chainId]', 'Operation chain to use when creating files', 'FileManager.Import')
   .option('-t, --folderishType [type]', 'Document type to use when creating folders', 'Folder')
-  .option('-m, --maxConcurrentRequests [max]', 'Maximum number of concurrent requests', 20)
+  .option('-m, --maxConcurrentRequests [max]', 'Maximum number of concurrent requests', 5)
   .option('-v, --verbose', 'Verbose output', false);
 
 program.parse(process.argv);
