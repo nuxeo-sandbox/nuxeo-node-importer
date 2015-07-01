@@ -4,7 +4,7 @@ Command line tool to import a local folder to a Nuxeo Platform instance.
 
 ## Installation
 
-    $ npm install -g troger/nuxeo-node-importer
+    $ npm install -g nuxeo-sandbox/nuxeo-node-importer
 
 This module is not yet published on npm.
 
