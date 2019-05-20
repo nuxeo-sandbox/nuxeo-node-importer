@@ -1,5 +1,7 @@
 # nuxeo-node-importer
 
+test
+
 Command line tool to import a local folder to a Nuxeo Platform instance.
 
 ## Installation
